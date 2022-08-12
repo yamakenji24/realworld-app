@@ -12,7 +12,7 @@ export const LoginForm = (): ReactElement => {
     };
     loginUserService({
       email: target.email.value,
-      password: target.email.value
+      password: target.password.value
     })
   }, []);
 
