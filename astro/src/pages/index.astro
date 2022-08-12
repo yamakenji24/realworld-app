@@ -1,82 +1,90 @@
 ---
 import Layout from '../layouts/Layout.astro';
-// import Card from '../components/Card.astro';
-import { Card } from '../components/Card'
 ---
 
-<Layout title="Welcome to Astro.">
-	<main>
-		<h1 class="mx-0 my-8">Welcome to <span class="text-gradient">Astro</span></h1>
-		<p class="instructions">
-			Check out the <code>src/pages</code> directory to get started.<br />
-			<strong>Code Challenge:</strong> Tweak the "Welcome to Astro" message above.
-		</p>
-		<ul role="list" class="link-card-grid">
-			<Card href="https://docs.astro.build/" title="Documentation"
-				body="Learn how Astro works and explore the official API docs." />
-			<Card href="https://astro.build/integrations/" title="Integrations"
-				body="Supercharge your project with new frameworks and libraries." />
-			<Card href="https://astro.build/themes/" title="Themes"
-				body="Explore a galaxy of community-built starter themes." />
-			<Card href="https://astro.build/chat/" title="Chat" body="Come say hi to our amazing Discord community. ❤️" />
-		</ul>
-	</main>
+<Layout title="RealWorld Astro ver">
+
+	<div class="home-page">
+
+		<div class="banner">
+			<div class="container">
+				<h1 class="logo-font">conduit</h1>
+				<p>A place to share your knowledge.</p>
+			</div>
+		</div>
+
+		<div class="container page">
+			<div class="row">
+
+				<div class="col-md-9">
+					<div class="feed-toggle">
+						<ul class="nav nav-pills outline-active">
+							<li class="nav-item">
+								<a class="nav-link disabled" href="">Your Feed</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link active" href="">Global Feed</a>
+							</li>
+						</ul>
+					</div>
+
+					<div class="article-preview">
+						<div class="article-meta">
+							<a href="profile.html"><img src="http://i.imgur.com/Qr71crq.jpg" /></a>
+							<div class="info">
+								<a href="" class="author">Eric Simons</a>
+								<span class="date">January 20th</span>
+							</div>
+							<button class="btn btn-outline-primary btn-sm pull-xs-right">
+								<i class="ion-heart"></i> 29
+							</button>
+						</div>
+						<a href="" class="preview-link">
+							<h1>How to build webapps that scale</h1>
+							<p>This is the description for the post.</p>
+							<span>Read more...</span>
+						</a>
+					</div>
+
+					<div class="article-preview">
+						<div class="article-meta">
+							<a href="profile.html"><img src="http://i.imgur.com/N4VcUeJ.jpg" /></a>
+							<div class="info">
+								<a href="" class="author">Albert Pai</a>
+								<span class="date">January 20th</span>
+							</div>
+							<button class="btn btn-outline-primary btn-sm pull-xs-right">
+								<i class="ion-heart"></i> 32
+							</button>
+						</div>
+						<a href="" class="preview-link">
+							<h1>The song you won't ever stop singing. No matter how hard you try.</h1>
+							<p>This is the description for the post.</p>
+							<span>Read more...</span>
+						</a>
+					</div>
+
+				</div>
+
+				<div class="col-md-3">
+					<div class="sidebar">
+						<p>Popular Tags</p>
+
+						<div class="tag-list">
+							<a href="" class="tag-pill tag-default">programming</a>
+							<a href="" class="tag-pill tag-default">javascript</a>
+							<a href="" class="tag-pill tag-default">emberjs</a>
+							<a href="" class="tag-pill tag-default">angularjs</a>
+							<a href="" class="tag-pill tag-default">react</a>
+							<a href="" class="tag-pill tag-default">mean</a>
+							<a href="" class="tag-pill tag-default">node</a>
+							<a href="" class="tag-pill tag-default">rails</a>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+	</div>
 </Layout>
-
-<style>
-	:root {
-		--astro-gradient: linear-gradient(0deg, #4f39fa, #da62c4);
-	}
-
-	main {
-		margin: auto;
-		padding: 1em;
-		max-width: 60ch;
-	}
-
-	.text-gradient {
-		font-weight: 900;
-		background-image: var(--astro-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 100% 200%;
-		background-position-y: 100%;
-		border-radius: 0.4rem;
-		animation: pulse 4s ease-in-out infinite;
-	}
-
-	@keyframes pulse {
-
-		0%,
-		100% {
-			background-position-y: 0%;
-		}
-
-		50% {
-			background-position-y: 80%;
-		}
-	}
-
-	.instructions {
-		line-height: 1.6;
-		margin: 1rem 0;
-		background: #4f39fa;
-		padding: 1rem;
-		border-radius: 0.4rem;
-		color: var(--color-bg);
-	}
-
-	.instructions code {
-		font-size: 0.875em;
-		border: 0.1em solid var(--color-border);
-		border-radius: 4px;
-		padding: 0.15em 0.25em;
-	}
-
-	.link-card-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
-		gap: 1rem;
-		padding: 0;
-	}
-</style>
