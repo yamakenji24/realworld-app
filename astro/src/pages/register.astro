@@ -1,0 +1,18 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ErrorBoundary from '../components/ErrorBoundary';
+import { RegisterForm } from '../components/RegisterContent/RegisterForm';
+---
+
+<Layout title="RealWorld Astro ver | Register">
+
+  <div class="auth-page">
+    <div class="container page">
+      <div class="row">
+        <ErrorBoundary>
+          <RegisterForm client:only="react" />
+        </ErrorBoundary>
+      </div>
+    </div>
+  </div>
+</Layout>
