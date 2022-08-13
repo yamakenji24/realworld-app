@@ -1,5 +1,6 @@
 import { AxiosError, AxiosResponse } from "axios";
 import { apiClient } from "./apiClient";
+import { updateUserInfo } from '../store/userStore';
 
 type Props = {
   username: string;
@@ -26,6 +27,7 @@ export const registerUserService = async (props: Props) => {
       },
     }).then(({ data }: AxiosResponse<RegisterUserResponse>) => {
       localStorage.setItem("tk", data.user.token);
+      updateUserInfo(data.user)
     });
     window.location.href = "/";
   } catch (e) {

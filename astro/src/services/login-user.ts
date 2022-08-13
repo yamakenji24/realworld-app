@@ -1,5 +1,6 @@
 import { AxiosError, AxiosResponse } from "axios";
 import { apiClient } from "./apiClient";
+import { updateUserInfo, updateUserLogin } from "../store/userStore";
 
 type Props = {
   email: string;
@@ -25,10 +26,10 @@ export const loginUserService = async (props: Props) => {
       },
     }).then(({ data }: AxiosResponse<LoginUserResponse>) => {
       localStorage.setItem("tk", data.user.token);
+      updateUserInfo(data.user);
     });
     window.location.href = "/";
   } catch (e) {
-    console.log(e)
     if (e instanceof AxiosError) {
       throw new Error("failed on login");
     }
