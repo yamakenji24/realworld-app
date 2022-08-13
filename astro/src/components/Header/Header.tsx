@@ -1,4 +1,13 @@
+import { useStore } from "@nanostores/react";
+import { useEffect } from "react";
+import { isUserLogin, updateUserLogin } from "../../store/userStore";
+
 export const Header = () => {
+  const isLogined = useStore(isUserLogin);
+  useEffect(() => {
+    updateUserLogin(true);
+  }, []);
+
   return (
     <nav className="navbar navbar-light">
       <div className="container">
