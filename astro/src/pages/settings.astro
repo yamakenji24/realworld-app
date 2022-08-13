@@ -1,0 +1,21 @@
+---
+import Layout from '../layouts/Layout.astro';
+import SettingForm from '../components/SettingContent/SettingForm.svelte'
+import ErrorBoundary from '../components/ErrorBoundary';
+---
+
+<Layout title="RealWorld Astro ver | Setting">
+  <div class="settings-page">
+    <div class="container page">
+      <div class="row">
+
+        <div class="col-md-6 offset-md-3 col-xs-12">
+          <h1 class="text-xs-center">Your Settings</h1>
+
+          <SettingForm client:only="svelte" />
+        </div>
+
+      </div>
+    </div>
+  </div>
+</Layout>

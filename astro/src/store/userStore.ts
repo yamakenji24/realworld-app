@@ -46,3 +46,7 @@ export const getUserInfo = action(userInfo, "getUserInfo", async (store, token: 
     }
   }
 });
+
+const updateUserSetting = action(userInfo, 'updateUserSettiing', (store) => {
+  
+})

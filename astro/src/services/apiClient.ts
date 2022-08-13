@@ -3,7 +3,7 @@ import axios, { AxiosRequestHeaders } from "axios";
 const BASE_URL = "https://api.realworld.io/api";
 
 type Props<T> = {
-  method: "POST" | "GET";
+  method: "POST" | "GET" | "PUT";
   url: string;
   data?: T;
   headers?: AxiosRequestHeaders;
