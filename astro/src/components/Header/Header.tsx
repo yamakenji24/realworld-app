@@ -1,11 +1,12 @@
 import { useStore } from "@nanostores/react";
 import { useEffect } from "react";
-import { isUserLogin, updateUserLogin } from "../../store/userStore";
+import { isUserLogin, checkUserLogin, userInfo } from "../../store/userStore";
 
 export const Header = () => {
   const isLogined = useStore(isUserLogin);
+  const user = useStore(userInfo);
   useEffect(() => {
-    updateUserLogin(true);
+    checkUserLogin();
   }, []);
 
   return (
@@ -30,16 +31,26 @@ export const Header = () => {
               <i className="ion-gear-a"></i>&nbsp;Settings
             </a>
           </li>
-          <li className="nav-item">
-            <a className="nav-link" href="/login">
-              Sign in
-            </a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" href="/register">
-              Sign up
-            </a>
-          </li>
+          {isLogined && user ? (
+            <li className="nav-item">
+              <a className="nav-link" href="/profile">
+                {user.username}
+              </a>
+            </li>
+          ) : (
+            <>
+              <li className="nav-item">
+                <a className="nav-link" href="/login">
+                  Sign in
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" href="/register">
+                  Sign up
+                </a>
+              </li>
+            </>
+          )}
         </ul>
       </div>
     </nav>

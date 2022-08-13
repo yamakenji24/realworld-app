@@ -1,6 +1,6 @@
 import { AxiosError, AxiosResponse } from "axios";
 import { apiClient } from "./apiClient";
-import { updateUserInfo, updateUserLogin } from "../store/userStore";
+import { updateUserInfo } from "../store/userStore";
 
 type Props = {
   email: string;
