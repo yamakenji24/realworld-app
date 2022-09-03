@@ -14,7 +14,6 @@
 
 <script>
 import ArticlePreview from './ArticlePreview.vue';
-
 import { getGlobalArticles, globalArticles } from "../../store/articleStore";
 import { useStore } from "@nanostores/vue";
 

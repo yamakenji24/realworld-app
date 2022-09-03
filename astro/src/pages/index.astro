@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro'
-import ArticlePreviewLayout from '../features/Article/ArticlePreviewLayout.vue';
+import ArticlePreviewLayout from '../features/ArticlePreview/ArticlePreviewLayout.vue';
+import { TagLayout } from '../features/TagLayout'
 ---
 
 <Layout title="RealWorld Astro ver">
@@ -36,17 +37,7 @@ import ArticlePreviewLayout from '../features/Article/ArticlePreviewLayout.vue';
 				<div class="col-md-3">
 					<div class="sidebar">
 						<p>Popular Tags</p>
-
-						<div class="tag-list">
-							<a href="" class="tag-pill tag-default">programming</a>
-							<a href="" class="tag-pill tag-default">javascript</a>
-							<a href="" class="tag-pill tag-default">emberjs</a>
-							<a href="" class="tag-pill tag-default">angularjs</a>
-							<a href="" class="tag-pill tag-default">react</a>
-							<a href="" class="tag-pill tag-default">mean</a>
-							<a href="" class="tag-pill tag-default">node</a>
-							<a href="" class="tag-pill tag-default">rails</a>
-						</div>
+						<TagLayout client:only="react"/>
 					</div>
 				</div>
 
