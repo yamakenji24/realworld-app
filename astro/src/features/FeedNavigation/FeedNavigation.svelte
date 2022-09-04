@@ -14,8 +14,7 @@
         break;
       }
       case "mine": {
-        const me = userInfo.get();
-        getArticlesWithRequirements({ author: me.username });
+        getArticlesWithRequirements({ author: $userInfo.username });
         break;
       }
       default: {
@@ -23,8 +22,6 @@
         break;
       }
     }
-
-    console.log("onClicked: ", e.currentTarget.name);
   }
 </script>
 
