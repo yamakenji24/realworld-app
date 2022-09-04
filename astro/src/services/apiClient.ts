@@ -2,14 +2,14 @@ import axios, { AxiosRequestHeaders, AxiosRequestConfig } from "axios";
 
 const BASE_URL = "https://api.realworld.io/api";
 
-type Props<T> = {
+type Props<T, K> = {
   method: "POST" | "GET" | "PUT";
   url: string;
   data?: T;
   headers?: AxiosRequestHeaders;
-  params?: AxiosRequestConfig
+  params?: K
 };
-export const apiClient = <T>({ method, url, data, headers, params }: Props<T>) => {
+export const apiClient = <T, K>({ method, url, data, headers, params }: Props<T, K>) => {
   return axios({
     method,
     url: BASE_URL + url,

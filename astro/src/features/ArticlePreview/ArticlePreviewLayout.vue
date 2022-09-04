@@ -14,7 +14,7 @@
 
 <script>
 import ArticlePreview from './ArticlePreview.vue';
-import { getGlobalArticles, globalArticles } from "../../store/articleStore";
+import { getGlobalArticles, postedArticles } from "../../store/articleStore";
 import { useStore } from "@nanostores/vue";
 
 export default {
@@ -25,7 +25,7 @@ export default {
     getGlobalArticles();
   },
   setup() {
-    const articles = useStore(globalArticles);
+    const articles = useStore(postedArticles);
     return { articles };
   },
 };

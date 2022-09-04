@@ -3,7 +3,7 @@
     <div class="article-meta">
       <a href="profile.html"><img src="http://i.imgur.com/Qr71crq.jpg" /></a>
       <div class="info">
-        <a href="" class="author">{{ articles[0].author.username }}</a>
+        <a href="" class="author">{{ author }}</a>
 
         <span class="date">{{ date }}</span>
       </div>
@@ -21,17 +21,7 @@
 </template>
 
 <script>
-import { getGlobalArticles, globalArticles } from "../../store/articleStore";
-import { useStore } from "@nanostores/vue";
-
 export default {
-  created() {
-    getGlobalArticles();
-  },
-  setup() {
-    const articles = useStore(globalArticles);
-    return { articles };
-  },
   props: ["author", "date", "favCounts", "title", "description"],
 };
 </script>
