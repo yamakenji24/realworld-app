@@ -5,16 +5,28 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro check && tsc --noEmit && astro build",
+    "build": "astro check && astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "test": "vitest"
   },
   "devDependencies": {
     "@astrojs/react": "^1.0.0",
+    "@astrojs/svelte": "^1.0.0",
     "@astrojs/tailwind": "^1.0.0",
+    "@astrojs/vue": "^1.0.0",
     "@types/react": "^18.0.17",
     "@types/react-dom": "^18.0.6",
     "astro": "^1.0.3",
+    "svelte": "^3.49.0",
+    "vitest": "^0.22.1",
+    "vue": "^3.2.37"
+  },
+  "dependencies": {
+    "@nanostores/react": "^0.3.0",
+    "@nanostores/vue": "^0.5.5",
+    "axios": "^0.27.2",
+    "nanostores": "^0.6.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   }
